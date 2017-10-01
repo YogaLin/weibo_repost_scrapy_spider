@@ -33,16 +33,24 @@ the result will be saved in csv format with UTF-8 code, you would like to conver
 
 ## run step:
 
-1. login weibo and capture the cookies of login info(software like [fiddler](http://www.telerik.com/fiddler) should be capable for this job)
+1. Run: pip install scrapy(only for whom have not installed scrapy yet.)
 
-2. config your cookies info and start_weibo_id in weibo/spider/weibo_spiders.py file(I would suggest you conifg more than one cookies, but one should be fine if you slow your crawl speed.)
+2. Clone code: git clone git@github.com:YogaLin/weibo_repost_scrapy_spider.git
 
-3. change your working-dir to /weibo folder
+3. login [weibo.cn](https://weibo.cn) and capture the cookies of login info(software like [fiddler](http://www.telerik.com/fiddler) should be capable for this job)
 
-4. run code: scrapy crawl weibo_spider -o YOUR_OUTPUT_FILE.csv(with .csv suffix)
+4. config your cookies info and start_weibo_id in weibo/spider/weibo_spiders.py file(I would suggest you conifg more than one cookies, but one should be fine if you slow your crawl speed.)
+
+5. change your working-dir to /weibo folder
+
+6. run code: scrapy crawl weibo_spider -o YOUR_OUTPUT_FILE.csv(with .csv suffix)
 
 ## F&Q
 
 1. Run the code and csv file only have one single data(data from your start_url)
 
   In this case, it's mostly you a bad cookies that weibo.cn server thinks you are not login yet. Modify your cookies_list with another (or other) cookies should work.
+
+## Other issues
+
+1. make sure it's not problem casued by scrapy, you are welcome to add new issue.
