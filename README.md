@@ -27,7 +27,7 @@ a demo crawled result of weibo
 
 a demo result of weibo: https://weibo.cn/comment/EwqnPi6i6
 
-![pic]()
+![pic](https://raw.githubusercontent.com/YogaLin/weibo_repost_scrapy_spider/master/demo-result.png)
 
 the result will be saved in csv format with UTF-8 code, you would like to convert it to ANSI code if you open the file in Microsoft Excel and having wrong-encode problem.
 
@@ -45,4 +45,4 @@ the result will be saved in csv format with UTF-8 code, you would like to conver
 
 1. Run the code and csv file only have one single data(data from your start_url)
 
-In this case, it's mostly you a bad cookies that weibo.cn server thinks you are not login yet. Modify your cookies_list with another (or other) cookies should work.
+  In this case, it's mostly you a bad cookies that weibo.cn server thinks you are not login yet. Modify your cookies_list with another (or other) cookies should work.
