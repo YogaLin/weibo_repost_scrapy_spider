@@ -2,16 +2,47 @@
 
 基于微博转发关系的网络爬虫
 
+## env
+
+python 2.7 | scrapy 1.3
+
 ## file descriptions：
 
-items.py:
+weibo/items.py:
 config fields you want to crawl
 
-middlewares.py:
+weibo/middlewares.py:
 some middlewares like random-user-agent you can use
 
-settings.py:
+weibo/settings.py:
 settings of this scrapy spider
 
-spiders/weibo_spider.py:
+weibo/spiders/weibo_spider.py:
 the crawler itself
+
+weibo/2017_06_06.csv:
+a demo crawled result of weibo
+
+## demo result:
+
+a demo result of weibo: https://weibo.cn/comment/EwqnPi6i6
+
+![pic]()
+
+the result will be saved in csv format with UTF-8 code, you would like to convert it to ANSI code if you open the file in Microsoft Excel and having wrong-encode problem.
+
+## run step:
+
+1. login weibo and capture the cookies of login info(software like [fiddler](http://www.telerik.com/fiddler) should be capable for this job)
+
+2. config your cookies info and start_weibo_id in weibo/spider/weibo_spiders.py file(I would suggest you conifg more than one cookies, but one should be fine if you slow your crawl speed.)
+
+3. change your working-dir to /weibo folder
+
+4. run code: scrapy crawl weibo_spider -o YOUR_OUTPUT_FILE.csv(with .csv suffix)
+
+## F&Q
+
+1. Run the code and csv file only have one single data(data from your start_url)
+
+In this case, it's mostly you a bad cookies that weibo.cn server thinks you are not login yet. Modify your cookies_list with another (or other) cookies should work.
